@@ -3,3 +3,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 This Repo is made to test our hypothesis that when creating multiple winston loggers, if we use the same transport instances then it causes a memory leak.
 
+
+Please check this PR for more details
+
+https://github.com/tathagat2000/Winston-Memory-Leak/pull/1
+

@@ -26,9 +26,11 @@ const loggerMiddleware = (req, res, next) => {
   const url = req.url;
   const referer = req.headers?.referer;
 
-  // Memory leak happens here
+  // Memory leak does NOT happens here
   req.logger = winston.createLogger({
-    ...loggerParams,
+    transports: [new winston.transports.Console({ level: "info" })],
+    format: winston.format.combine(winston.format.json()),
+    levels,
     defaultMeta: {
       url,
       referer,
